@@ -10,8 +10,44 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-# Uncomment a feed source
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+# 添加SSR-Plus
+git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
 
-# Add a feed source
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+# 添加PassWall
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+
+# 添加bypass
+ 
+
+# 添加bypass 依赖
+#rm -rf  package/smartdns-le
+#git clone https://github.com/garypang13/smartdns-le package/smartdns-le
+#rm -rf  package/lua-maxminddb
+#svn co https://github.com/garypang13/openwrt-packages/tree/master/lua-maxminddb  package/lua-maxminddb
+#rm -rf  package/luci-app-bypass
+#git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
+
+
+# Add luci-app-openclash
+git clone -b master https://github.com/vernesong/OpenClash.git package-temp
+rm -rf package/lean/luci-app-openclash
+mv -f package-temp/luci-app-openclash package/lean/
+cat >> .config1 <<EOF
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_LIBCURL_COOKIES=y
+CONFIG_LIBCURL_FILE=y
+CONFIG_LIBCURL_FTP=y
+CONFIG_LIBCURL_HTTP=y
+CONFIG_LIBCURL_NO_SMB="!"
+CONFIG_LIBCURL_OPENSSL=y
+CONFIG_LIBCURL_PROXY=y
+CONFIG_PACKAGE_bash=y
+CONFIG_PACKAGE_ca-bundle=y
+CONFIG_PACKAGE_coreutils-nohup=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_libcurl=y
+CONFIG_PACKAGE_libncurses=y
+CONFIG_PACKAGE_libreadline=y
+CONFIG_PACKAGE_terminfo=y
+EOF
+rm -rf package-temp
