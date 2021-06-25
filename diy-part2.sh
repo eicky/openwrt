@@ -26,15 +26,11 @@ rm -rf package/lean/luci-theme-edge
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/lean/luci-theme-edge
 # git clone   https://github.com/garypang13/luci-theme-edge.git package/lean/luci-theme-edge
 
-# theme: atmaterial	
-rm -rf package/lean/luci-theme-atmaterial	
-git clone https://github.com/sypopo/luci-theme-atmaterial.git  package/lean/luci-theme-atmaterial	
+
 
 
 cat >> .config <<EOF	
 CONFIG_PACKAGE_luci-theme-edge=y	
-CONFIG_PACKAGE_luci-theme-atmaterial=y	
-CONFIG_PACKAGE_luci-app-godproxy=y	
 EOF	
 
 
