@@ -20,12 +20,12 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
  
 
 # 添加bypass 依赖
-#rm -rf  package/smartdns-le
-#git clone https://github.com/garypang13/smartdns-le package/smartdns-le
-#rm -rf  package/lua-maxminddb
-#svn co https://github.com/garypang13/openwrt-packages/tree/master/lua-maxminddb  package/lua-maxminddb
-#rm -rf  package/luci-app-bypass
-#git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
+rm -rf  package/smartdns-le
+git clone https://github.com/garypang13/smartdns-le package/smartdns-le
+rm -rf  package/lua-maxminddb
+svn co https://github.com/garypang13/openwrt-packages/tree/master/lua-maxminddb  package/lua-maxminddb
+rm -rf  package/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
 
 
 # Add luci-app-openclash
