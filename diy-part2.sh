@@ -11,14 +11,14 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/10.10.10.6/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.50.30/g' package/base-files/files/bin/config_generate
 
 #'godproxy'
-rm -rf package/lean/luci-app-godproxy
-git clone https://github.com/godros/luci-app-godproxy.git package/lean/luci-app-godproxy
+#rm -rf package/lean/luci-app-godproxy
+#git clone https://github.com/godros/luci-app-godproxy.git package/lean/luci-app-godproxy
 
 
-git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/lean/luci-theme-edge
+#git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/lean/luci-theme-edge
 #'设置默认主题'
-default_theme='edge'	
-sed -i "s/bootstrap/$default_theme/g" feeds/luci/modules/luci-base/root/etc/config/luci
+#default_theme='edge'	
+#sed -i "s/bootstrap/$default_theme/g" feeds/luci/modules/luci-base/root/etc/config/luci

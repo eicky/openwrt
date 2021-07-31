@@ -11,14 +11,14 @@
 #
 
 # 添加SSR-Plus
-git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
+#git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
 
 # 添加PassWall
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 
 # 添加bypass
-rm -rf  package/luci-app-bypass
-git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
+#rm -rf  package/luci-app-bypass
+#git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
 
 
 # Add luci-app-openclash
